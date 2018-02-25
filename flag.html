@@ -1,0 +1,777 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<meta http-equiv="Content-Language" content="zh-CN" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<meta content="all" name="robots" />
+	<meta name="author" content="正方软件股份有限公司" />
+	<meta name="Copyright" content="Copyright . 正方软件 2012.All Rights Reserved11" />
+	<meta name="description" content="正方数字化校园标准版-1.0.0.0" />
+	<meta name="keywords" content="null" />
+	<meta http-equiv="P3P" content='CP="CAO PSA OUR"' />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<title>中北大学-个人门户</title>
+	<link rel="stylesheet" id="cssLink" href="style/portal2.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="style/tdy_portal2.css" type="text/css" media="all" />
+	<script type="text/javascript" src="http://i.nuc.edu.cn/dwr/util.js"></script>
+	<script type="text/javascript" src="http://i.nuc.edu.cn/dwr/engine.js"></script>
+	<script type="text/javascript" src="http://i.nuc.edu.cn/js/portal.js"></script>
+	<script type="text/javascript" src="http://i.nuc.edu.cn/js/comman.js"></script>
+<script type='text/javascript'>var ROOT_PATH='';</script>
+	<script type='text/javascript' src="http://i.nuc.edu.cn/dwr/interface/portalAjax.js"></script>
+	<script type='text/javascript' src="http://i.nuc.edu.cn/js/commanFunction.js"></script>
+	</head>
+	<body>
+	<form name="commanForm" method="post" action="/portal.do" onsubmit="return false;">
+	<input type="hidden" id="ymdm" name ="ymdm" value="141993223909467233"/>
+	<input type="hidden" id="bqdm" name="bqdm" value="141993237193175935"/>
+	<input type="hidden" id="bqmc" name="bqmc" value="主页"/>
+	<input type="hidden" id="bqymlx" name="bqymlx" value="0"/>
+	<input type="hidden" id="bqyyymdz" name="bqyyymdz" value=""/>
+	<input type="hidden" id="mbdm" name="mbdm" value="141993236763891598"/>
+	<input type="hidden" id="aroundSplit" value=""/>
+	<div id="container" class="body_main">
+	<div id="141993223924112952" class="topframe">
+	<div id="141993223930561070" class="topframe_89">
+	<div id="141147653252767671" class="textdisplay_141147653252767671" >
+<div class="con"><p><!--<a target="_blank" href="https://ca.nuc.edu.cn/zfca/main.do">安全中心</a>|--><a href="https://ca.nuc.edu.cn/zfca/logout">注 销</a></p></div>
+</div></div>
+	<div id="141993223939313492" class="topframe_90">
+	</div>
+	</div>
+	<div id="141993223944084970" class="mainframe">
+	<div id="141993223951047117" class="mainframe_71">
+	</div>
+	<div id="141993223962710440" class="mainframe_72">
+	<div id="125376515831257995" class="userDesktop_125376515831257995" >
+ <script type="text/javascript">
+		window.onload = function(){
+		    var ymlx = document.getElementById("bqymlx").value;
+		    var url = "";
+			if(ymlx=="2"){ 
+			    url = document.getElementById("bqyyymdz").value;
+				document.getElementById("addportal").style.display="none";
+				document.getElementById("portlet").style.className="myportal2";
+				document.getElementById("portlet").src="";
+				document.getElementById("portlet").style.display="";
+			}else if(ymlx=="1"){
+				document.getElementById("portlet").style.className="myportal";
+				url="portalyh.do?bqdm="+document.getElementById("bqdm").value+"&ymlx=1";
+				document.getElementById("portlet").src=url;
+				document.getElementById("portlet").style.display="";
+			}
+		}
+		
+		/**标签切换chgCode**/
+		function chgCode(obj) {
+			if (obj.className != "current11") {
+				document.getElementById("bqdm").value = obj.id;
+				document.getElementById("bqmc").value = obj.title;
+				document.getElementById("bqymlx").value = obj.getAttribute("ymlx");
+				var root=document.getElementById("userlable");
+				for(var i=0;i<root.childNodes.length;i++){
+					root.childNodes[i].className ="";
+				}
+				obj.className = "current"
+				document.getElementById("mainpage").style.display="none";
+				if(obj.getAttribute("ymlx")=="0"){
+					document.getElementById("addportal").style.display="none";
+				}else{
+					document.getElementById("addportal").style.display="";
+				}
+				var url="";
+				if(obj.getAttribute("ymlx")=="2"){
+					url = obj.getAttribute("yyymdz"); 
+					document.getElementById("addportal").style.display="none";
+					document.getElementById("portlet").style.className="myportal2";
+					document.getElementById("portlet").src=url;
+					document.getElementById("portlet").style.display="";
+				}else if(obj.getAttribute("ymlx")=="0"){
+					refreshForm("portal.do?bqdm="+obj.id);
+				}else{
+					document.getElementById("portlet").style.className="myportal";
+					url="portalyh.do?bqdm="+obj.id+"&ymlx="+obj.getAttribute("ymlx");
+					document.getElementById("portlet").src=url;
+					document.getElementById("portlet").style.display="";
+					var iframeYwxtgnmkdm = document.getElementById("iframeYwxtgnmkdm");
+					if(iframeYwxtgnmkdm != null)
+						iframeYwxtgnmkdm.style.display="none";
+				}
+			}
+		}
+	
+		/**标签弹出层addtab**/
+		function addtab(){
+			var dd_html = "";
+			dd_html += "<ul>";
+			dd_html += "<li>";
+			dd_html += "<h4>新标签名称：</h4>";
+			dd_html += "<input type='text' name='newGName' id='newGName'>";
+			dd_html += "</li>";
+			dd_html += "<li>";
+			dd_html += "<div class='dban'><button onclick='addLable();'>添加</button><button onclick='closeAdd()'>取消</button></div>";
+			dd_html += "</li>";
+			dd_html += "</ul>";
+			showDiv(dd_html, 300, 100);
+			document.getElementById("newGName").select();
+		}
+	
+		/**增加标签addLable**/
+		function addLable(){
+			var tmp_newName = document.getElementById("newGName").value;
+			if (tmp_newName.length > 10) {
+				alert("标签长度不能大于10");
+				return false;
+			}
+			if (tmp_newName == "") {
+				alert("标签名称不能为空！");
+				document.getElementById("newGName").select();
+				return false;
+			}
+			portalAjax.addLable(tmp_newName, dispInfo);
+		}
+	
+		/**增加标签成功刷新个性页面dispInfo**/
+	function dispInfo(str) {
+		var strs = str.split("||");
+		if (strs[0] == "succeed") {
+			document.forms[0].action="portal.do";
+			document.forms[0].submit();
+			alert(strs[1]);
+		} else {
+			alert(strs[0]);
+		}
+	}
+	
+		/**关闭弹出层closeAdd**/
+	function closeAdd(){
+		i = document.getElementsByTagName("select").length;
+		for (j = 0;j < i; j++) {
+			document.getElementsByTagName("select")[j].style.visibility = "";
+		}
+		dd_html = "";
+		document.getElementById("tmpdiv").innerHTML = dd_html;
+	}
+	
+		/**弹出层方法showDiv**/
+	function showDiv(d_html, w, h) {
+		i = document.getElementsByTagName("select").length;
+		for (j = 0;j < i; j++) {
+			document.getElementsByTagName("select")[j].style.visibility = "hidden";
+		}
+		var d_width = document.body.clientWidth;
+		var d_height = 700;
+		var d_left = 0;
+		var d_top = 0;
+		var d_color = "";
+		var d_width_top = w;
+		var d_height_top = h;
+		var d_left_top = (d_width - d_width_top) / 2;
+		var d_top_top = (d_height - d_height_top) / 2 - 50;
+		var d_color_top = "#EEF4F9";
+		dd_html = "<div class='mainframebox' oncontextmenu='return false' onselectstart='return false' style='filter:alpha(opacity=5);position:absolute;align:middle;text-align:center;padding-top:10px;border: 1px solid #5E88B8; width:"
+		+ d_width
+		+ "px; height:"
+		+ d_height
+		+ "px; top:"
+		+ d_top
+		+ "px; left:" + d_left + "px; background-color:" + d_color + "'>";
+		dd_html += "</div>";
+		dd_html += "<div class='mmxg01' style='position:absolute;align:middle;text-align:center;padding-top:10px;border: #a4bad2 2px solid; width:"
+		+ d_width_top
+		+ "px; height:"
+		+ d_height_top
+		+ "px; top:"
+		+ d_top_top
+		+ "px; left:"
+		+ d_left_top
+		+ "px; background-color:"
+		+ d_color_top + "'>";
+		dd_html += d_html;
+		document.getElementById("tmpdiv").innerHTML = dd_html;
+	}
+	
+		/**删除标签页面closeLable**/
+	function closeLable(obj) {
+		if (confirm("此操作将删除该标签，并连带删除标签下所有的设置,确定要删除吗？")){
+			portalAjax.closeLable(obj.id,dispInfo);
+		}
+	}
+	
+		/**增加标签页内容addPortal**/
+	function addPortal(){
+		var url = "portalControl.do?bqdm="+document.getElementById("bqdm").value;
+		if(url.indexOf("?") != "-1") {
+			url += "&"+Math.random();
+		}else {
+			url += "?"+Math.random();
+		}
+		showModalDialog(url,window,"Status:1;dialogWidth:810px;dialogHeight:255px;help:no;scroll:yes;resizable=1");
+	}
+	
+		/**设置默认页面setMrym**/
+	function setMrym(){
+		if (confirm("您确定设置'"+document.getElementById("bqmc").value+"'标签页为默认页面?")){
+			var mbdm = document.getElementById("mbdm").value;
+			var bqdm = document.getElementById("bqdm").value;
+			portalAjax.setMrym(bqdm,mbdm,function(str){
+				var strs = str.split("||");
+				if (strs[0] == "succeed") {
+					alert(strs[1]);
+				} else {
+					alert(strs[0]);
+				}
+			});
+		}
+	}
+		/**标签页面弹出层edittab**/
+	function edittab(id,obj) {
+		var dd_html = "";
+		dd_html += "<ul>";
+		dd_html += "<li>";
+		dd_html += "<h4>请输入‘"+obj.innerHTML+"’新名称：</h4>";
+		dd_html += "</li>";
+		dd_html += "<li>";
+		dd_html += "<input type='hidden' name='newid' id='newid' value='"+id+"' >";
+		dd_html += "<input type='text' name='newGName' id='newGName'>";
+		dd_html += "</li>";
+		dd_html += "<li>";
+		dd_html += "<div class='dban'><button onclick='modiYhzlable();'>修改</button><button onclick='closeAdd()'>取消</button></div>";
+		dd_html += "</li>";
+		dd_html += "</ul>";
+		showDiv(dd_html, 300, 100);
+		document.getElementById("newGName").select();
+	}
+	
+		/**编辑标签页面modiYhzlable**/
+	function modiYhzlable() {
+		var tmp_newName = document.getElementById("newGName").value;
+		var id = document.getElementById("newid").value;
+		if (tmp_newName.length > 10) {
+			alert("标签长度不能大于10");
+			return false;
+		}
+		if (tmp_newName == "") {
+			alert("标签名称不能为空！");
+			document.getElementById("newGName").select();
+			return false;
+		}
+		portalAjax.updateLable(id, tmp_newName, dispInfo);
+	}
+	var clickRepeat;
+	var clickCount=0;//点击次数
+	var clickDelay=300;//点击时间间隔（毫秒）
+	function chgEditHandler(node,id,obj) {
+		clearTimeout(clickRepeat);
+		clickCount++;
+		if(clickCount==1) {
+			clickRepeat=setTimeout(function (){
+				chgCode(node);
+				clickCount=0;
+			}, clickDelay);
+		}
+		else {
+			edittab(id,obj);
+			clickCount=0;
+		}
+	}
+</script>
+<div class="userdesktop">
+<ul id="userlable">
+
+	
+	
+		<li class="current" ymlx="0"  title="主页" id="141993237193175935">
+		<a href="#" onclick="chgCode(this.parentNode)" ondblclick="edittab(this.parentNode.id,this);" onfocus="this.blur()">主页		</a>
+		</li>
+	
+	
+	
+	
+		<li class="" ymlx="0"  title="我的信息" id="141993285949184121">
+		<a href="#" onclick="chgCode(this.parentNode)" ondblclick="edittab(this.parentNode.id,this);" onfocus="this.blur()">我的信息		</a>
+		</li>
+	
+	
+	
+	
+		<li class="" ymlx="0"  title="我的成绩" id="142076436825083854">
+		<a href="#" onclick="chgCode(this.parentNode)" ondblclick="edittab(this.parentNode.id,this);" onfocus="this.blur()">我的成绩		</a>
+		</li>
+	
+	
+	
+	
+		<li class="" ymlx="0"  title="我的借阅" id="142076493775971895">
+		<a href="#" onclick="chgCode(this.parentNode)" ondblclick="edittab(this.parentNode.id,this);" onfocus="this.blur()">我的借阅		</a>
+		</li>
+	
+	
+	
+	
+		<li class="" ymlx="0"  title="新闻中心" id="142070057165570533">
+		<a href="#" onclick="chgCode(this.parentNode)" ondblclick="edittab(this.parentNode.id,this);" onfocus="this.blur()">新闻中心		</a>
+		</li>
+	
+	
+	
+	
+	
+	
+	
+		<li class="" ymlx="2" title="校历" yyymdz="http://i.nuc.edu.cn/xiaoli.html"  id="142613836549498664">
+		<a href="#"  onmouseup="chgEditHandler(this.parentNode,this.parentNode.id,this);" onfocus="this.blur()">校历</a>
+		<span onclick="closeLable(this.parentNode);"></span>
+		</li>
+	
+	
+	
+	
+	
+	
+		<li class="" title="安全中心"  id="142068608988049665">
+		<a target="_blank" href="https://ca.nuc.edu.cn/zfca/main.do" onfocus="this.blur()">安全中心</a>
+		</li>
+	
+	
+	
+	
+
+</ul>
+<h2 id="addtab" class="zjbq">
+<a onclick="addtab();" href="#">增加标签</a>
+</h2>
+<h3 id="addportal" class="zjnr" style="display: none;">
+<a onclick="addPortal();" href="#">增加内容</a>
+</h3>
+	</div>
+<div id="mainpage" class="homepage"><div style="background: url(style/images/banner.jpg) center top no-repeat;height: 330px;position: relative;z-index: 1;width:100%;">
+	</div>
+	<div style="	width:33.33%;
+	float:left;
+width:1000px !important;height:288px; overflow:hidden;margin:0 auto;float:none !important;position: relative;z-index: 3;margin-top: -330px;">
+	<div style="overflow:hidden;width:100%;">
+	<div id="135252324563550879" class="personalinfo_141998688457485547_135252324563550879" >
+<div class="pes_inf"><h3><span>个人信息</span><a class='personLoginout' href='https://ca.nuc.edu.cn/zfca/logout'>【注销】</a></h3><div class="inf_bx" id="inf_bx_135252324563550879"> <img  style="margin-right:5px" id="yhtp" onmouseover="this.style.cursor='pointer';" width="75" height="75" onclick="openSnsInfo();" src="showImg.do?yhm=1607084209"/><h5 id="yhnc" onmouseover="this.style.cursor='pointer';" onclick="openSnsInfo();">于洋</h5><h5 id="yhzt" onmouseover="this.style.cursor='pointer';"><input type="hidden" id="yhzthidden" name="yhzthidden" value="在线" /><input type="hidden" id="yhztxxhidden" name="yhztxxhidden" value="" /></h5><p title="" id="yhxq" style="line-height:18px" onmouseover="javascript:setS2(1);"  onmouseout="javascript:setS1(0);">编辑我的心情</p></div></div><script language="javascript" src="http://i.nuc.edu.cn/dwr/interface/portalAjax.js"></script>
+	<script type="text/javascript">
+var editYhxqFlag = true;
+var yhxqMouseOut = 0;
+var s1 = 0;
+function setS1(ss){
+s1 = ss;
+}
+var s2 = 0;
+function setS2(ss){
+s2 = ss;
+}
+document.onclick = function(){
+if(!editYhxqFlag && s1 == 0 && s2 == 0){
+editYhxqFlag = true;
+var textarea1 = jQuery("#textarea1").html();
+if(textarea1.length > 20){
+textarea1 = textarea1.substr(0, 20) + '...';
+}
+jQuery('#yhxq').html(textarea1);
+}
+}
+function editYhxq(yhxqId){
+if(editYhxqFlag){
+editYhxqFlag = false;
+jQuery(yhxqId).html(jQuery(yhxqId).attr('title'));
+jQuery(yhxqId).wrapInner("<textarea id='textarea1' style='width:105px;float:left;line-height:14px;font-size:12px;height:40px;overflow:hidden;border:#B7C4CD 1px solid;padding:5px'></textarea>");
+}
+document.getElementById("textarea1").onmouseout = function(){setS2(0);}
+document.getElementById("textarea1").onmouseover = function(){setS2(1);}}
+function  openSnsInfo(){
+document.getElementById('135252324563550879').parentNode.parentNode.parentNode.parentNode.style.zIndex = 9999999;document.getElementById('snsInfodiv').style.display = '';
+document.getElementById('snsInfoIframe').src = 'https://ca.nuc.edu.cn/zfca?login=0122579031373493718&yhlx=teacher&url=myUserInfo.action&rd=' + Math.random();
+}
+function callPortal(searchStr1){
+document.getElementById('snsInfodiv').style.display = 'none';
+document.getElementById('135252324563550879').parentNode.parentNode.parentNode.parentNode.style.zIndex = "";
+var searchStr = decodeURIComponent(searchStr1);
+var searchArr = searchStr.substr(1).split('&');
+if(searchArr.length == 3){
+var yhnc = searchArr[0].split('=')[1];
+var yhxq = searchArr[1].split('=')[1];
+var yhsnstp = searchArr[2].split('=')[1];
+document.getElementById('snsInfodiv').style.display = 'none';
+var oriYhxq = searchArr[1].split('=')[1];
+jQuery('#yhxq').attr('title', oriYhxq);
+if(oriYhxq.length > 20){
+oriYhxq = oriYhxq.substr(0,20) + '...'};
+document.getElementById('yhxq').innerHTML = oriYhxq;
+document.getElementById('yhtp').src = searchArr[2].split('=')[1];
+portalAjax.updateYhtpb(yhnc, yhxq, yhsnstp, function(data){
+if(data[0] == '0'){
+alert('修改失败');
+}else{
+document.getElementById('yhnc').innerHTML = data[1];
+}
+});}}
+</script><div id="snsInfodiv" class="snsInfoDiv" style="display:none;position:absolute;"><iframe src="" id="snsInfoIframe" name="snsInfoIframe" width="642px" height="420px"  allowTransparency="true"  frameborder="0" marginwidth="0" marginheight="0" scrolling="no" align="middle"></iframe></div></div></div>
+	<div style="overflow:hidden;width:100%;">
+	<div id="142070104850939645" class="showtime_141998697520766787_142070104850939645" >
+<script type="text/javascript" src="js/comman.js"></script>
+<h3><span>学生校历</span></h3>
+<span class="time" id="clock_151065188849525719"></span>
+	<span id="xuen_151065188849525719" class="xuen"></span>
+	<span id="xueq_151065188849525719" class="xueq"></span>
+	<span id="jxz_151065188849525719" class="jxz"></span>
+	<script type="text/javascript">
+function tick_151065188849525719() {
+var hours, minutes, seconds, xfile,weekday,timeValue;
+var intHours, intMinutes, intSeconds;
+var today, theday;
+today = new Date();
+function initArray(){
+this.length=initArray.arguments.length
+for(var i=0;i<this.length;i++)
+this[i+1]=initArray.arguments[i] }
+var d=new initArray(
+"星期日 ",
+"星期一 ",
+"星期二 ",
+"星期三 ",
+"星期四 ",
+"星期五 ",
+"星期六 ");
+theday = today.getFullYear()+"年" + [today.getMonth()+1]+"月" +today.getDate() +"日 ";
+weekday=d[today.getDay()+1];
+intHours = today.getHours();
+intMinutes = today.getMinutes();
+intSeconds = today.getSeconds();
+if (intHours == 0) {
+hours = "12";
+xfile = "午夜";
+} else if (intHours < 12) {
+hours = intHours;
+xfile = "上午";
+} else if (intHours == 12) {
+hours = "12";
+xfile = "正午";
+} else {
+hours = intHours ;
+xfile = "下午";
+}
+if (intMinutes < 10) {
+minutes = ":0"+intMinutes;
+} else {
+minutes = ":"+intMinutes;
+}
+if (intSeconds < 10) {
+seconds = ":0"+intSeconds+" ";
+} else {
+seconds = ":"+intSeconds+" ";
+}
+timeString = "<span class='theday'>"+theday+"</span><span class='weekday'>"+weekday+"</span><span class='xfile'>"+xfile+"</span><span class='hours'>"+hours+"</span><span class='minutes'>"+minutes+"</span><span class='seconds'>"+seconds+"</span>";
+var kxsj = "";
+var springVacation = new Date(today.getFullYear()+"/"+"02/31");
+var spring = new Date(today.getFullYear()+"/"+"03/09");
+var autumnVacation = new Date(today.getFullYear()+"/"+"07/12");
+var autumn = new Date(today.getFullYear()+"/"+"09/01");
+var now = new Date();
+if(springVacation<=now&&now<spring){
+	 document.getElementById('xueq_151065188849525719').innerHTML = "寒假";
+	kxsj = today.getFullYear()+"/"+"02/31";
+}else if(spring<=now&&now<autumnVacation){
+	 document.getElementById('xueq_151065188849525719').innerHTML = "春季学期";
+	kxsj = today.getFullYear()+"/"+"03/09";
+}else if(autumnVacation<=now&&now<autumn){
+	 document.getElementById('xueq_151065188849525719').innerHTML = "暑假";
+	kxsj = today.getFullYear()+"/"+"07/12";
+}else{
+	 document.getElementById('xueq_151065188849525719').innerHTML = "秋季学期";
+
+	if(today.getMonth()+1 <= parseInt("07/12".substring(0, 2))) {
+	kxsj = (today.getFullYear() - 1)+"/"+"09/01";
+	} else {
+	kxsj = today.getFullYear()+"/"+"09/01";
+	}}
+
+if(document.getElementById('xueq_151065188849525719').innerHTML == "秋季学期") {
+	if(today.getMonth()+1 <= parseInt("07/12".substring(0, 2))) {
+	 document.getElementById('xuen_151065188849525719').innerHTML = (today.getFullYear() - 1)+"-"+(today.getFullYear())+"学年度";
+} else {
+	 document.getElementById('xuen_151065188849525719').innerHTML = (today.getFullYear())+"-"+(today.getFullYear() + 1)+"学年度";
+}
+} else {
+ document.getElementById('xuen_151065188849525719').innerHTML = (today.getFullYear() - 1)+"-"+today.getFullYear()+"学年度";
+}
+jxzDate = today.getFullYear()+"/" + [today.getMonth()+1]+"/" +today.getDate() +"/";
+var sum = week(kxsj,jxzDate);
+document.getElementById('jxz_151065188849525719').innerHTML="第"+sum+"周";
+document.getElementById("clock_151065188849525719").innerHTML = timeString;
+window.setTimeout("tick_151065188849525719();", 100);
+}
+window.setTimeout("tick_151065188849525719();", 100);
+function week(a,b){
+	var d1 =new Date(a).getTime();
+	var d2 =new Date(b).getTime();  
+
+	if(d1>d2){
+		d1=d1+d2;
+		d2=d1-d2;
+		d1=d1-d2;
+	}
+	var n = new Date(d1).getDay(); //当前日期是星期几
+	var dayCount = Math.ceil((d2 - d1)/(24*60*60*1000));//第几天
+	if(n != 0){
+		var m = parseInt("0654321".charAt(n));
+		weekNo = Math.ceil((dayCount-m)/7) + 1;
+		}else{
+		weekNo = Math.ceil(dayCount/7);
+	}
+		return weekNo;
+	}
+	
+</script>
+</div></div>
+	</div>
+	<div style="	width:33.33%;
+	float:left;
+width:1000px !important;height:340px;overflow:hidden;float:none !important;margin:0 auto;position: relative;z-index: 2;">
+	<div style="">
+	<div id="142077474691364847" class="WebserviceControl_141998698324534906_142077474691364847" >
+<script language="javascript" src="http://i.nuc.edu.cn/dwr/interface/webServiceAjax.js"></script><h3><span>校内新闻</span></h3>
+<div id='displayDataID142077474691364847' class='webli'>
+</div>
+<script type='text/javascript'>
+function refurbish_142077474691364847(){
+webServiceAjax.getService('displayDataID142077474691364847','142077474691364847','空α空α空α空',dispWebServiceList);
+}
+var isIE = (document.all && window.ActiveXObject && !window.opera) ? true : false;
+if (isIE){
+window.attachEvent('onload',refurbish_142077474691364847)//对于IE
+} else{
+window.addEventListener('load',refurbish_142077474691364847,false);//对于FireFox
+}
+</script>
+</div></div>
+	<div style="">
+	<div id="142181426643477900" class="WebserviceControl_141998698791724128_142181426643477900" >
+<script language="javascript" src="http://i.nuc.edu.cn/dwr/interface/webServiceAjax.js"></script><h3><span>校内公告</span></h3>
+<div id='displayDataID142181426643477900' class='webli'>
+</div>
+<script type='text/javascript'>
+function refurbish_142181426643477900(){
+webServiceAjax.getService('displayDataID142181426643477900','142181426643477900','空α空α空α空',dispWebServiceList);
+}
+var isIE = (document.all && window.ActiveXObject && !window.opera) ? true : false;
+if (isIE){
+window.attachEvent('onload',refurbish_142181426643477900)//对于IE
+} else{
+window.addEventListener('load',refurbish_142181426643477900,false);//对于FireFox
+}
+</script>
+</div></div>
+	<div style="">
+	<div id="130085089903410308" class="userMessageList_141998699005637860_130085089903410308" >
+<h3><span>
+待办事宜</span></h3>
+<ul id="ul_130085089903410308" name="ul_130085089903410308">
+</ul>
+<script language="javascript" src="http://i.nuc.edu.cn/dwr/interface/portalAjax.js"></script>
+<script type="text/javascript">
+function userMessage_130085089903410308(){
+portalAjax.getUserMessageList("5","20",function(data){
+document.getElementById("ul_130085089903410308").innerHTML=data;
+});
+}
+var isIE = (document.all && window.ActiveXObject && !window.opera) ? true : false;
+if (isIE){
+window.attachEvent('onload',userMessage_130085089903410308);//对于IE
+}else{
+window.addEventListener('load',userMessage_130085089903410308,false);//对于FireFox
+}
+window.setInterval("userMessage_130085089903410308()",900000);
+</script>
+</div></div>
+	</div>
+	<div style="	width:33.33%;
+	float:left;
+width:100% !important;height:auto;overflow:hidden;float:none !important">
+	<div style="height:200px;background:#9e0000;
+
+">
+	<div id="142104994847723324" class="userappportlet_142052537895058039_142104994847723324" >
+<h3><span>学在中北新</span><span class="num" id="appnum_142104994847723324"></span></h3><ul id="ul_142104994847723324">
+</ul>
+<a href="javascript:void(0);" title="功能定制"  class="config" onclick="show_142104994847723324()"><span>定 制</span></a>
+<div class="appSettingDiv" id="appSettingDiv_142104994847723324" style="display:none;position:fixed;">
+<iframe src="" id="appSettingIframe_142104994847723324"name="appSettingIframe_142104994847723324" width="927px" height="502px"  allowTransparency="true"  frameborder="0" marginwidth="0" marginheight="0" scrolling="no" align="middle"></iframe>
+</div>
+<script src="http://i.nuc.edu.cn/js/bxSlider/jquery.bxslider.js"></script><link rel="stylesheet" id="cssLink" href="http://i.nuc.edu.cn/style/openwin.css"  type="text/css" media="all" />
+<script type="text/javascript">
+var slider;function insert(yydm,ljdz){
+portalAjax.insertYYDJJLB(yydm, function(data){
+window.open(ljdz,'_blank');});
+}
+var x_142104994847723324;
+function showPicUrl_142104994847723324(){
+portalAjax.getAppNumByKjdm("142104994847723324", function(data){
+document.getElementById("appnum_142104994847723324").innerHTML = data;
+});
+portalAjax.getAppList("142104994847723324", function(data){
+document.getElementById("ul_142104994847723324").innerHTML=data;
+slider=jQuery('#ul_142104994847723324').bxSlider({nextText:' ',
+heightQty:' ',
+prevText:' ',
+pager:false,
+slideWidth: 135,
+slideMargin: 0,
+minSlides:1,
+maxSlides:7, 
+moveSlides:7, 
+displaySlideQty: 7,
+speed: 800});
+ $(".bx-controls-direction .bx-prev").hide();
+ $(".bx-controls-direction .bx-next").hide();
+$(".bx-wrapper").hover(function(){
+    $(".bx-controls-direction .bx-prev").show();
+    $(".bx-controls-direction .bx-next").show();
+},function(){
+    $(".bx-controls-direction .bx-prev").hide();
+    $(".bx-controls-direction .bx-next").hide();
+})
+});
+}
+jQuery().ready(function(){setTimeout('showPicUrl_142104994847723324()',0);});function openlink(obj){
+dropNumAjax.urlDropNum(obj.id,obj.djsl);
+}
+function show_142104994847723324(){
+document.getElementById('142104994847723324').style.zIndex = 9999;
+document.getElementById('appSettingIframe_142104994847723324').src = 'yhyygl.do?yhlx=student&yydl=1&rd=' + Math.random() + '&kjdm=142104994847723324';document.getElementById('appSettingDiv_142104994847723324').style.display = '';
+}
+function hiddenYhyyxxb(portletId){
+document.getElementById('142104994847723324').style.zIndex = "";
+document.getElementById('appSettingDiv_' + portletId).style.display = 'none';}
+function closeYhyyxxb(yydms, portletId){
+document.getElementById('142104994847723324').style.zIndex = "";
+document.getElementById('appSettingDiv_' + portletId).style.display = 'none';
+portalAjax.saveYhYyxxb(yydms, function(data){
+if(data[0]=='success'){
+document.getElementById("appnum_" + portletId).innerHTML = data[2];
+document.getElementById("ul_" + portletId).innerHTML=data[1];
+}else{alert('设置失败')}
+slider.reloadSlider(); $(".bx-controls-direction .bx-prev").hide();
+ $(".bx-controls-direction .bx-next").hide();
+$(".bx-wrapper").hover(function(){
+    $(".bx-controls-direction .bx-prev").show();
+    $(".bx-controls-direction .bx-next").show();
+},function(){
+    $(".bx-controls-direction .bx-prev").hide();
+    $(".bx-controls-direction .bx-next").hide();
+})
+});}
+</script>
+</div></div>
+	<div style="width:100% !important; height:150px; border-bottom:1px solid #d8d8d8; overflow:hidden;">
+	<div id="142068533855987372" class="urlportlet_142052538739236691_142068533855987372" >
+<h3><span>友情链接</span></h3><script language="javascript" src="http://i.nuc.edu.cn/dwr/interface/dropNumAjax.js"></script><ul> 
+<li class="urlportlet_li_0"><a class="urlportlet_a_0" href="http://www.nuc.edu.cn/" id="142068533919992244" djsl="10106" onclick="openlink(this)" title="学校官网" target="_blank">	学校主页</a></li>
+<li class="urlportlet_li_1"><a class="urlportlet_a_1" href="http://www1.nuc.edu.cn/jwc/" id="142068533920947981" djsl="59907" onclick="openlink(this)" title="中北大学教务处" target="_blank">	中北大学教务处</a></li>
+<li class="urlportlet_li_2"><a class="urlportlet_a_2" href="http://www.moe.edu.cn/" id="142068533925785041" djsl="1638" onclick="openlink(this)" title="国家教育网" target="_blank">	国家教育网</a></li>
+<li class="urlportlet_li_3"><a class="urlportlet_a_3" href="http://www.sxedu.gov.cn/" id="142068533933541986" djsl="1228" onclick="openlink(this)" title="山西省教育网" target="_blank">	山西省教育网</a></li>
+<li class="urlportlet_li_4"><a class="urlportlet_a_4" href="http://www.tyedu.com.cn/edu/" id="142068533942817422" djsl="887" onclick="openlink(this)" title="太原市教育网" target="_blank">	太原市教育网</a></li>
+<li class="urlportlet_li_5"><a class="urlportlet_a_5" href="http://www.neea.edu.cn/" id="142068533952278518" djsl="1427" onclick="openlink(this)" title="国家教育考试网" target="_blank">	国家教育考试网</a></li>
+<li class="urlportlet_li_6"><a class="urlportlet_a_6" href="http://news.sohu.com/guojixinwen.shtml" id="142068533961685525" djsl="297" onclick="openlink(this)" title="搜狐国际时政网" target="_blank">	搜狐国际时政网</a></li>
+<script type="text/javascript">function openlink(obj){
+dropNumAjax.urlDropNum(obj.id,obj.djsl);
+}
+</script>
+<script type="text/javascript">
+function showFwpl_142068533855987372(obj){
+var url = "fwplb.jsp?FwId="+obj.id;
+showTopWin(url,800,600,"Y");
+}
+</script>
+<script type="text/javascript">
+function showFwjs_142068533855987372(obj){
+var url = "yzs/fwjs.action?id="+obj.id;
+showTopWin(url,800,600,"Y");
+}
+</script>
+</ul></div></div>
+	<div style="">
+	</div>
+	<div style="">
+	<div id="142102841911264894" class="textdisplay_142102834829518980_142102841911264894" >
+<h3><span>学在中北滑动支持</span></h3>
+<div class="con"><script src="/js/jquery-1.8.0.min.js"></script><script src="/js/bxSlider/jquery.bxslider.js"></script><script type="text/javascript">
+	$(document).ready(function() {
+		var slider=$('#ul_142071162817135053').bxSlider({
+			//mode: 'horizontal',
+			///useCSS: false,
+			  //infiniteLoop: false,
+			  //hideControlOnEnd: true,
+			  //easing: 'easeOutElastic',
+			  nextText:"up",
+			  prevText:"down",
+			  pager:false,
+			  slideWidth: 150,
+			  slideMargin: 0,
+			  minSlides:1,
+			  maxSlides:4,
+			  moveSlides:4,
+			  displaySlideQty: 4,
+			// prevImage:"/images/138992063484928730.gif",
+			//  nextImage:"/images/138992063484928730.gif",
+			  speed: 2000
+			  
+			 // moveSlideQty: 2
+			// slideWidth:145
+			  //slideMargin: 10,
+		});
+		//slider.reloadSlider();
+	});
+</script></div>
+</div></div>
+	</div>
+	</div>
+<iframe name="portlet" id="portlet" marginwidth="0" marginheight="0"
+framespacing="0" frameborder="0" height="98%" scrolling="no" width="98%" allowtransparency="true" onload="this.height=400" class="myportal">
+</iframe><div id="fhbqInfodiv" class="fhbqInfodiv" style="display:none;position:absolute;"><iframe src="" id="fhbqInfoIframe" name="fhbqInfoIframe" width="927px" height="502px"  allowTransparency="true"  frameborder="0" marginwidth="0" marginheight="0" scrolling="no" align="middle"></iframe></div><script type="text/javascript">
+function reinitIframe_portalyh(){
+var iframe = document.getElementById("portlet");
+try{var bHeight = iframe.contentWindow.document.body.scrollHeight;
+var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+ var height = Math.max(bHeight, dHeight);
+iframe.height =  height;
+}catch (ex){}
+}
+if(document.getElementById("portlet").style.display="none"){
+window.setInterval("reinitIframe_portalyh()", 200);
+}
+</script>
+<script>
+	function getList(kjdm){
+	}
+	</script></div></div>
+	</div>
+	<div id="141993223975270381" class="botframe">
+	<div id="141993223979173496" class="botframe_22">
+	</div>
+	<div id="141993223989397834" class="botframe_23">
+	<div id="125376819976546954" class="textdisplay_125376819976546954" >
+<div class="con"><p>版权所有：中北大学　CopyRight 2004-2009　地址：山西省太原市学院路3号<br />
+邮政编码：030051　Email:webmaster@nuc.edu.cn　非经营性互联网信息服务审批号　(晋)ICP备05000467号</p></div>
+</div></div>
+	</div>
+	<div id="141993224003460871" class="otherframe">
+	</div>
+	<div id="tmpdiv" style="position:static;height: 0px;"></div></div>
+	</form>
+	</body>
+	
+</html>
